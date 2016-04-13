@@ -1,0 +1,59 @@
+#bear{
+	background-color: blue;
+	overflow: hidden;
+	color:black;
+	@extend .anim-bg-2;
+	.bg-t{
+		background-image: url('../assets/img/taiwan-t.png');
+		position: absolute;
+		width: 100%;
+		height: 150%;
+		background-size: 100% auto;
+		margin-top:-17%;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-clip: no
+	}
+	.bg-b{
+		background-image: url('../assets/img/taiwan-b.png');
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-size: 100% auto;
+		background-position: center bottom;
+		background-repeat: no-repeat;
+	}
+	.face{
+		background-image: url('../assets/img/panda.png');
+
+	}
+	.char{
+		opacity: 1;
+
+	}
+	.title-1{
+		position: absolute;
+		@extend .sh-l;
+		font-size: 2rem;
+		h3{
+			@extend .lato-lt;
+			font-size: 1em;
+
+		}
+		h1{
+			color:#ff0909;
+			@extend .julee;
+			font-size: 5em;
+			font-weight: 300;
+			margin-left:0.5em;
+		}
+		h5{
+			@extend .lato-lt;
+			font-size: 2em;
+			text-align: right;
+			color:#ff0909;
+			font-weight: 300;
+
+		}
+	}
+}

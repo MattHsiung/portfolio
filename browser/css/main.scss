@@ -1,0 +1,218 @@
+$primary:#016BBF;
+$primary-light: #00BFE8;
+$primary-dark: #22507D;
+$secondary:#FFD501;
+$secondary-light:#DCD34B;
+$secondary-dark:#FFD501;
+$tertiary:#FF5F41;
+$gray:#333;
+
+
+// fonts
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,100italic,900);
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P|Megrim|Londrina+Outline|Julee);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.fade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    opacity: 1;
+}
+.fade.ng-enter,
+.fade.ng-leave {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.fade.ng-enter {
+    opacity: 0;
+}
+.fade.ng-enter-active {
+    opacity: 1;
+}
+.fade.ng-leave {
+    opacity: 1;
+}
+.fade.ng-leave-active {
+    opacity: 0;
+}
+
+// GLOBALS
+* {
+  box-sizing: border-box;
+}
+html{
+  font-size: 24px;
+  width: 100vw;
+}
+body{
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+h1{
+  margin:0;
+}
+
+section{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.face{
+  position: absolute;
+  right: 0;
+  top:0;
+  bottom: 0;
+  transform:translateX(50%);
+  height: 100vh;
+  width:100vw;
+  background-repeat: no-repeat;
+  background-position:center bottom;
+  background-size: contain;
+  background-attachment: fixed;
+  opacity: 0;
+}
+
+.iam{
+  position: absolute;
+  margin:30px;
+  h1{
+    @extend .lato;
+    @extend .sh-l;
+    font-size: 3rem;
+    font-weight:900;
+  }
+}
+
+// HELPERS
+
+
+.lato{
+  font-family: 'Lato', sans-serif; 
+} 
+.lato-lt{
+  font-family: 'Lato', sans-serif; 
+  font-weight: 100;
+} 
+
+.sh-l{
+  text-shadow: 5px 2px 10px rgba(0,0,0,0.3);
+}
+.ps{
+  font-family: 'Press Start 2P', cursive;
+}
+
+.meg{
+  font-family: 'Megrim', cursive;
+}
+
+.lo{
+  font-family: 'Londrina Outline', cursive;
+}
+.julee{
+  font-family: 'Julee', cursive;
+}
+.ub{
+  font-family: 'Ubuntu Mono', ;
+}
+.anim-bg{
+  background: linear-gradient(181deg, #ffffff, #ffffff, #00ffb9, #b87eff, #fffa84);
+  background-size: 1000% 1000%;
+
+  -webkit-animation: bg-anim 20s ease infinite;
+  -moz-animation: bg-anim 20s ease infinite;
+  animation: bg-anim 20s ease infinite;
+
+  @-webkit-keyframes bg-anim {
+      0%{background-position:50% 0%}
+      50%{background-position:50% 100%}
+      100%{background-position:50% 0%}
+  }
+  @-moz-keyframes bg-anim {
+      0%{background-position:50% 0%}
+      50%{background-position:50% 100%}
+      100%{background-position:50% 0%}
+  }
+  @keyframes bg-anim { 
+      0%{background-position:50% 0%}
+      50%{background-position:50% 100%}
+      100%{background-position:50% 0%}
+  }
+}
+
+.anim-bg-2{
+  background: linear-gradient(180deg, #ff0000, #eeff00);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 23s ease infinite;
+  -moz-animation: AnimationName 23s ease infinite;
+  animation: AnimationName 23s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+      0%{background-position:51% 0%}
+      50%{background-position:50% 100%}
+      100%{background-position:51% 0%}
+  }
+  @-moz-keyframes AnimationName {
+      0%{background-position:51% 0%}
+      50%{background-position:50% 100%}
+      100%{background-position:51% 0%}
+  }
+  @keyframes AnimationName { 
+      0%{background-position:51% 0%}
+      50%{background-position:50% 100%}
+      100%{background-position:51% 0%}
+  }
+}
+
+.hover{
+   -webkit-animation: Hover 2s ease-in-out infinite;
+  -moz-animation: Hover 2s ease-in-out infinite;
+  animation: Hover 2s ease-in-out infinite;
+}
+.float{
+   -webkit-animation: Float 2s ease-in-out infinite;
+  -moz-animation: Float 2s ease-in-out infinite;
+  animation: Float 2s ease-in-out infinite;
+}
+
+@keyframes Hover { 
+    0%{transform:translate(-50%, 0) rotate(-5deg)}
+    50%{transform:translate(-50%, 10px) rotate(5deg)}
+    100%{transform:translate(-50%, 0) rotate(-5deg)}
+}
+
+@keyframes Float { 
+    0%{transform:translate(0, 0)}
+    50%{transform:translate(0, 10px)}
+    100%{transform:translate(0, 0)}
+}
+
+
+.hidden{
+  visibility: hidden;
+}
+
+@import 'welcome';
+@import 'name';
+@import 'bear';
+@import 'developer';
+@import 'designer';
+@import 'producer';
+@import 'musician';
+@import 'me';
+
+

@@ -1,0 +1,26 @@
+#producer{
+	.title-1{
+		position: absolute;
+		top:50%;
+		left:10%;
+		@extend .sh-l;
+		font-size: 2rem;
+		transform: translateY(-50%);
+
+		h3{
+			@extend .lato-lt;
+			font-size: 1em;
+		}
+		h1{
+			@extend .lato-lt;
+			font-size: 3em;
+			font-weight: 300;
+
+		}
+		h5{
+			@extend .lato-lt;
+			font-size: 1em;
+			text-align: right;
+		}
+	}
+}

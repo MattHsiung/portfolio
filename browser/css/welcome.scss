@@ -1,0 +1,15 @@
+
+
+#welcome{
+	color: black;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+
+	h1{
+		@extend .lato-lt;
+		@extend .sh-l;
+		font-size: 7rem;
+
+	}
+}

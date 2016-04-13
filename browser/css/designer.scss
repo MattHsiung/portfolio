@@ -1,0 +1,145 @@
+#designer{
+	background-image: url('../assets/img/bpgrid.png');
+	.face{
+		background-image: url('../assets/img/facedes1.png');
+
+	}
+	.iam{
+		@extend .lo;
+		font-weight: 300;
+		color: yellow;
+	}
+	.overlay{
+		background-image: url('../assets/img/facedes2.png');
+		transition:all 1s ease-in-out;
+		opacity: 0!important;
+		height: 30vh; 
+		cursor: url('../assets/img/pencil.png'), auto;
+		&:hover{
+			height:100vh;
+			opacity:1!important;
+		}
+	}
+	.iphone{
+		position: absolute;
+		bottom:10px;
+		left:20vw;
+		background-image: url('../assets/img/iphone.png');
+		width: 256px;
+		height: 514px;
+		transition:transform 0.5s ease-in-out;
+		.screen{
+			position: absolute;
+			background-color: #0F594D;
+			top: 64px;
+			left: 17px;
+			bottom: 76px;
+			right: 28px;
+			padding:10px;
+			span{
+				position: absolute;
+				top:0;
+				left:0;
+				background-color: #93A748;
+				width:100%;
+				padding:5px;
+				margin-bottom: 5px;
+				text-align: center;
+				box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+				a{
+					color:rgba(0,0,0,0.7);
+				}
+
+			}
+			.prof{
+				box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+				position: relative;
+				top:28px;
+				left: 50%;
+				transform: translateX(-50%);
+				height: 167px;
+				width: 167px;
+				padding:30px;
+				background-color: #C15134;
+				border-radius: 50%;
+				border:3px solid black;
+				img{
+					transform:rotate(-90deg);
+				}
+				margin-bottom: 5px;
+			}
+			.content{
+				box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+				background-color: #F2E6CD;
+				position: relative;
+				bottom: -35px;
+				text-align: center;
+				border-radius: 10px;
+				hr{
+					margin:3px;
+				}
+				background: white;
+				padding:5px;
+				left:0;
+				right:-15px;
+				i{
+					position: absolute;
+					left:10px;
+					color: red;
+					&:hover{
+						color:#FF6969;
+					}
+				}
+			}
+
+		}
+		&:hover{
+			transform:rotate(90deg);
+			.screen{
+				span{
+					opacity:0;
+
+				}
+				.prof{
+					transform: translateX(-50%) rotate(-90deg);
+					top:185px;
+					
+				}
+				.content{
+					transform:rotate(-90deg);
+					width:170px;
+					height:167px;
+					top:-165px;
+					left:10px;
+				}
+
+			}
+		}
+	}
+	.title-1{
+		position: absolute;
+		top:10%;
+		left:10%;
+		font-size: 2rem;
+		// transform: translateY(-50%);
+
+		h3{
+			@extend .lato-lt;
+			font-size: 1em;
+		}
+		h1{
+			@extend .lo;
+			font-size: 4em;
+			font-weight: 300;
+			color: yellow;
+			z-index: 5;
+			position:relative;
+
+		}
+		h5{
+			@extend .lato-lt;
+			font-size: 1em;
+			text-align: right;
+		}
+	}
+}
