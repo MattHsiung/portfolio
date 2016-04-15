@@ -9,7 +9,26 @@
 	h1{
 		@extend .lato-lt;
 		@extend .sh-l;
-		font-size: 7rem;
+		font-size: 14vw;
 
 	}
+
+	.info{
+		position: absolute;
+		left: 0;
+		bottom:0;
+		width: 100%;
+		@extend .lato-lt;
+		@extend .sh-l;
+		text-align: center;
+		h5{
+			font-weight: 300;
+			font-size: 2.4em;
+		}
+		p{
+			font-weight: 300;
+			font-size: 1.5em;
+		}
+	}
+
 }

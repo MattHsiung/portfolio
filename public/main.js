@@ -1,132 +1,136 @@
 var app;
-var height = $(window).height();
-$(window).resize(function () {
-  height = $(window).height();
-});
+$(document).ready(function () {
 
-$(window).scroll(function () {
-
-  var pos = $(this).scrollTop();
-  console.log(pos);
-  $('.face').css({
-    'opacity': pos / 800.00
+  var height = $(window).height();
+  $(window).resize(function () {
+    height = $(window).height();
   });
 
-  if (pos > 5) {
-    $('.wrapper').addClass('anim-bg');
-  }
-  // name	
-  if (pos > height / 2) {
-    $('#name .title-1 h1').removeClass('hidden');
-    $('#name .title-1 h3').removeClass('hidden');
-    $('#name .title-1 h5').removeClass('hidden');
-  }
-  // bear
-  if (pos > height * 1) {
-    var offset = Math.min(0, pos - $('#bear').offset().top + $(window).height() - 900).toFixed();
+  $('#resumelink').on('click', function () {
+    $('#resume').removeClass('hidden');
+  });
+  $('#closeRes').on('click', function () {
+    $('#resume').addClass('hidden');
+  });
 
-    $('#bear .bg-t').css({ 'transform': 'translate(0px, ' + Math.abs(offset * 0.3) + 'px)' });
+  $(window).scroll(function () {
 
-    $('#bear .title-1').css({
-      'transform': 'translate(0px, ' + Math.abs((pos - $('#bear').offset().top) / 15) + '%)'
+    var pos = $(this).scrollTop();
+    console.log(pos);
+    $('.face').css({
+      'opacity': pos / 800.00
     });
 
-    $('#bear .title-1 h1').removeClass('hidden');
-    $('#bear .title-1 h3').removeClass('hidden');
-    $('#bear .title-1 h5').removeClass('hidden');
-  }
-  // dev
-  if (pos > height * 2.5) {
+    if (pos > 5) {
+      $('.wrapper').addClass('anim-bg');
+      $('#welcome .info').removeClass('hidden');
+    }
+    // name	
+    if (pos > height / 2) {
+      $('#name .title-1 h1').removeClass('hidden');
+      $('#name .title-1 h3').removeClass('hidden');
+      $('#name .title-1 h5').removeClass('hidden');
+    }
+    // bear
+    if (pos > height * 1) {
+      var offset = Math.min(0, pos - $('#bear').offset().top + $(window).height() - 900).toFixed();
 
-    $('#developer .title-1').css({
-      'transform': 'translate(0px, ' + Math.abs((pos - $('#developer').offset().top) / 15) + '%)'
-    });
+      $('#bear .bg-t').css({ 'transform': 'translate(0px, ' + Math.abs(offset * 0.3) + 'px)' });
 
-    $('#developer .face img').css({
-      'transform': 'translate(0px, ' + Math.abs((pos - $('#developer').offset().top) / 15) + '%)'
-    });
+      $('#bear .title-1').css({
+        'transform': 'translate(0px, ' + Math.abs((pos - $('#bear').offset().top) / 15) + '%)'
+      });
 
-    $('#developer .iam').removeClass('hidden');
-    $('#developer .title-1').removeClass('hidden');
-    $('#developer .title-1 h1').removeClass('hidden');
-    $('#developer .title-1 h3').removeClass('hidden');
-    $('#developer .title-1 h5').removeClass('hidden');
-  }
-  //designer
-  if (pos > height * 3.5) {
-    $('#designer .iam').removeClass('hidden');
-    $('#designer .title-1 h1').removeClass('hidden');
-    $('#designer .title-1 h3').removeClass('hidden');
-    $('#designer .title-1 h5').removeClass('hidden');
-  }
-  //producer
-  if (pos > height * 4.5) {
-    $('#producer .iam').removeClass('hidden');
-    $('#producer .title-1 h1').removeClass('hidden');
-    $('#producer .title-1 h3').removeClass('hidden');
-    $('#producer .title-1 h5').removeClass('hidden');
-  }
-  //musician
-  if (pos > height * 5.5) {
-    $('#musician .iam').removeClass('hidden');
-    $('#musician .title-1 h1').removeClass('hidden');
-    $('#musician .title-1 h3').removeClass('hidden');
-    $('#musician .title-1 h5').removeClass('hidden');
-  }
-  //me
-  if (pos > height * 6.5) {
-    $('#me .iam').removeClass('hidden');
-    $('#me .title-1 h1').removeClass('hidden');
-    $('#me .title-1 h3').removeClass('hidden');
-    $('#me .title-1 h5').removeClass('hidden');
-  }
+      $('#bear .title-1 h1').removeClass('hidden');
+      $('#bear .title-1 h3').removeClass('hidden');
+      $('#bear .title-1 h5').removeClass('hidden');
+    }
+    // dev
+    if (pos > height * 2.5) {
 
-  //   $('.logo').css({
-  //     'transform' : 'translate(0px, '+ wScroll /2 +'%)'
-  //   });
+      $('#developer .title-1').css({
+        'transform': 'translate(0px, ' + Math.abs((pos - $('#developer').offset().top) / 15) + '%)'
+      });
 
-  //   $('.back-bird').css({
-  //     'transform' : 'translate(0px, '+ wScroll /4 +'%)'
-  //   });
+      $('#developer .face img').css({
+        'transform': 'translate(0px, ' + Math.abs((pos - $('#developer').offset().top) / 15) + '%)'
+      });
 
-  //   $('.fore-bird').css({
-  //     'transform' : 'translate(0px, -'+ wScroll /40 +'%)'
-  //   });
+      $('#developer .iam').removeClass('hidden');
+      $('#developer .title-1').removeClass('hidden');
+      $('#developer .title-1 h1').removeClass('hidden');
+      $('#developer .title-1 h3').removeClass('hidden');
+      $('#developer .title-1 h5').removeClass('hidden');
+    }
+    //designer
+    if (pos > height * 3.5) {
+      $('#designer .title-1').css({
+        'transform': 'translate(0px, ' + Math.abs((pos - $('#designer').offset().top) / 8) + 'px)'
+      });
+      $('#designer .web').css({
+        'transform': 'translate(0px, ' + Math.abs((pos - $('#designer').offset().top) / 5) + 'px)'
+      });
 
-  // }
+      $('.apps span').each(function (i) {
+        setTimeout(function () {
+          console.log('hide');
+          $('.apps span').eq(i).removeClass('hidden');
+        }, i * 400);
+      });
 
-  // // Landing Elements
-  // if(wScroll > $('.clothes-pics').offset().top - ($(window).height() / 1.2)) {
+      $('.apps span').each(function (i) {
+        setTimeout(function () {
+          $('.apps span').eq(i).removeClass('animated');
+        }, 2700);
+      });
+      setTimeout(function () {
+        $('.apps').addClass('float');
+      }, 2500);
 
-  //   $('.clothes-pics figure').each(function(i){
+      $('#designer .iam').removeClass('hidden');
+      $('#designer .title-1 h1').removeClass('hidden');
+      $('#designer .web').removeClass('hidden');
+      $('#designer .iphone').removeClass('hidden');
+    }
+    //producer
+    // if(pos>height*4.5){
+    // 	$('#producer .iam').removeClass('hidden')
+    // 	$('#producer .title-1 h1').removeClass('hidden')
+    // 	$('#producer .title-1 h3').removeClass('hidden')
+    // 	$('#producer .title-1 h5').removeClass('hidden')
+    // }  	
+    //musician
+    // 	if(pos>height*5.5){
+    // $('#musician .iam').removeClass('hidden')
+    // 		$('#musician .title-1 h1').removeClass('hidden')
+    // 		$('#musician .title-1 h3').removeClass('hidden')
+    // 		$('#musician .title-1 h5').removeClass('hidden')
+    // 	}
+    //me
+    if (pos > height * 4.5) {
+      $('#me .iam').removeClass('hidden');
+      $('#me .title-1 h1').removeClass('hidden');
+      $('#me .title-1 h3').removeClass('hidden');
+      $('#me .title-1 h5').removeClass('hidden');
+    }
 
-  //     setTimeout(function(){
-  //       $('.clothes-pics figure').eq(i).addClass('is-showing');
-  //     }, (700 * (Math.exp(i * 0.14))) - 700);
-  //   });
+    if (pos > height * 5.1) {
+      var offset5 = pos - height * 5.1;
 
-  // }
+      $('#education .contain').css({
+        'transform': 'translate(0px, ' + Math.abs(offset5 * 0.4) + 'px)'
+      });
+    }
 
-  // // Promoscope
-  // if(wScroll > $('.large-window').offset().top - $(window).height()){
+    if (pos > height * 5) {
+      var offset6 = pos - height * 5;
 
-  //   $('.large-window').css({'background-position':'center '+ (wScroll - $('.large-window').offset().top) +'px'});
-
-  //   var opacity = (wScroll - $('.large-window').offset().top + 400) / (wScroll / 5);
-
-  //   $('.window-tint').css({'opacity': opacity});
-
-  // }
-
-  // // Floating Elements
-
-  // if(wScroll > $('.blog-posts').offset().top - $(window).height()){
-
-  //   var offset = (Math.min(0, wScroll - $('.blog-posts').offset().top +$(window).height() - 350)).toFixed();
-
-  //   $('.post-1').css({'transform': 'translate('+ offset +'px, '+ Math.abs(offset * 0.2) +'px)'});
-
-  //   $('.post-3').css({'transform': 'translate('+ Math.abs(offset) +'px, '+ Math.abs(offset * 0.2) +'px)'});
-
-  // }
+      $('#links').css({
+        'opacity': offset6 / (height / 2)
+      });
+      $('footer h1').css({
+        'opacity': offset6 / (height / 2)
+      });
+    }
+  });
 });

@@ -1,6 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,100italic,900);
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P|Megrim|Londrina+Outline|Julee);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+.wrapper {
+  background-color: white; }
+
 .fade {
   position: absolute;
   top: 0;
@@ -41,6 +45,12 @@ body {
 h1 {
   margin: 0; }
 
+main {
+  position: relative;
+  z-index: 3;
+  margin-bottom: 50vh;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); }
+
 section {
   height: 100vh;
   width: 100vw;
@@ -71,11 +81,11 @@ section {
 .lato, .iam h1 {
   font-family: 'Lato', sans-serif; }
 
-.lato-lt, #welcome h1, #name .title-1 h3, #name .title-1 h1, #name .title-1 h5, #bear .title-1 h3, #bear .title-1 h5, #developer .title-1 h5, #designer .title-1 h3, #designer .title-1 h5, #producer .title-1 h3, #producer .title-1 h1, #producer .title-1 h5, #musician .title-1 h3, #musician .title-1 h1, #musician .title-1 h5, #me .title-1 h3, #me .title-1 h1, #me .title-1 h5 {
+.lato-lt, #welcome h1, #welcome .info, #name .title-1 h3, #name .title-1 h1, #name .title-1 h5, #bear .title-1 h3, #bear .title-1 h5, #developer .title-1 h5, #designer .title-1 h3, #designer .title-1 h5, #producer .contain div h1, #producer .title-1 h3, #producer .title-1 h5, #musician .title-1 h3, #musician .title-1 h1, #musician .title-1 h5, #me .title-1 h3, #me .title-1 h1, #me .title-1 h5, #education .vid, #education h1, #education h2, #education .contain .logo h4 {
   font-family: 'Lato', sans-serif;
   font-weight: 100; }
 
-.sh-l, .iam h1, #welcome h1, #name .title-1, #bear .title-1, #developer .title-1, #producer .title-1, #musician .title-1, #me .title-1 {
+.sh-l, .iam h1, #welcome h1, #welcome .info, #name .title-1, #bear .title-1, #developer .title-1, #producer .title-1, #musician .title-1, #me .title-1, #education .vid, #education h1, #education h2, #education .contain .logo h4, footer h1, footer .links a {
   text-shadow: 5px 2px 10px rgba(0, 0, 0, 0.3); }
 
 .ps {
@@ -87,10 +97,13 @@ section {
 .lo, #designer .iam, #designer .title-1 h1 {
   font-family: 'Londrina Outline', cursive; }
 
+.po, footer h1 {
+  font-family: 'Pacifico', cursive; }
+
 .julee, #bear .title-1 h1 {
   font-family: 'Julee', cursive; }
 
-.ub, #developer .title-1 h3, #developer .title-1 h1 {
+.ub, #developer .title-1 h3, #developer .title-1 h1, #education .contain .logo h2 {
   font-family: "Ubuntu Mono"; }
 
 .anim-bg {
@@ -127,11 +140,11 @@ section {
 .anim-bg-2, #bear {
   background: linear-gradient(180deg, #ff0000, #eeff00);
   background-size: 400% 400%;
-  -webkit-animation: AnimationName 23s ease infinite;
-  -moz-animation: AnimationName 23s ease infinite;
-  animation: AnimationName 23s ease infinite; }
+  -webkit-animation: gradient 23s ease infinite;
+  -moz-animation: gradient 23s ease infinite;
+  animation: gradient 23s ease infinite; }
 
-@-webkit-keyframes AnimationName {
+@-webkit-keyframes gradient {
   0% {
     background-position: 51% 0%; }
   50% {
@@ -139,7 +152,7 @@ section {
   100% {
     background-position: 51% 0%; } }
 
-@-moz-keyframes AnimationName {
+@-moz-keyframes gradient {
   0% {
     background-position: 51% 0%; }
   50% {
@@ -147,7 +160,7 @@ section {
   100% {
     background-position: 51% 0%; } }
 
-@keyframes AnimationName {
+@keyframes gradient {
   0% {
     background-position: 51% 0%; }
   50% {
@@ -190,7 +203,19 @@ section {
   justify-content: center;
   align-items: center; }
   #welcome h1 {
-    font-size: 7rem; }
+    font-size: 14vw; }
+  #welcome .info {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center; }
+    #welcome .info h5 {
+      font-weight: 300;
+      font-size: 2.4em; }
+    #welcome .info p {
+      font-weight: 300;
+      font-size: 1.5em; }
 
 .wrapper {
   overflow: hidden; }
@@ -263,13 +288,21 @@ section {
     background-image: url("../assets/img/face.png"); }
     #developer .face img {
       position: absolute;
-      right: 0;
-      bottom: 10%;
-      transform: translateX(-50%);
+      left: 50%;
+      top: 50%;
+      margin-top: -242px;
       transition: all 0.4s ease;
       opacity: 0; }
       #developer .face img:hover {
         opacity: 1; }
+  #developer .overlay {
+    background-image: url("../assets/img/facematrix.png");
+    transition: all 1s ease-in-out;
+    opacity: 0 !important;
+    height: 30vh; }
+    #developer .overlay:hover {
+      height: 100vh;
+      opacity: 1 !important; }
   #developer .mdl-layout {
     width: 100%;
     height: 100%;
@@ -325,6 +358,14 @@ section {
       opacity: 1; }
     #developer .title-1:hover h1 {
       color: transparent; }
+  #developer .icon {
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    cursor: pointer; }
+    #developer .icon a {
+      display: block;
+      margin: 30px; }
   #developer .bottom-bar {
     position: absolute;
     bottom: -5px;
@@ -384,6 +425,25 @@ section {
         transition: opacity 0.2s ease; }
     #developer .bottom-bar:hover .dock {
       transform: translateY(0); }
+  #developer #resume {
+    position: absolute;
+    height: 80%;
+    width: 800px;
+    top: 100px;
+    left: 20%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3); }
+    #developer #resume iframe {
+      height: 100%;
+      width: 100%; }
+    #developer #resume a {
+      color: red;
+      position: absolute;
+      left: -10px;
+      top: -10px;
+      opacity: 0.7; }
+      #developer #resume a:hover {
+        opacity: 1;
+        text-decoration: none; }
 
 #designer {
   background-image: url("../assets/img/bpgrid.png"); }
@@ -403,6 +463,7 @@ section {
       opacity: 1 !important; }
   #designer .iphone {
     position: absolute;
+    z-index: 2;
     bottom: 10px;
     left: 20vw;
     background-image: url("../assets/img/iphone.png");
@@ -457,12 +518,18 @@ section {
         right: -15px; }
         #designer .iphone .screen .content hr {
           margin: 3px; }
-        #designer .iphone .screen .content i {
+        #designer .iphone .screen .content .fa-heart {
           position: absolute;
           left: 10px;
           color: red; }
-          #designer .iphone .screen .content i:hover {
+          #designer .iphone .screen .content .fa-heart:hover {
             color: #FF6969; }
+        #designer .iphone .screen .content .fa-thumbs-o-up {
+          position: absolute;
+          right: 10px;
+          color: blue; }
+          #designer .iphone .screen .content .fa-thumbs-o-up:hover {
+            color: #4d99ff; }
     #designer .iphone:hover {
       transform: rotate(90deg); }
       #designer .iphone:hover .screen span {
@@ -476,14 +543,40 @@ section {
         height: 167px;
         top: -165px;
         left: 10px; }
+  #designer .web {
+    width: 679px;
+    height: 611px;
+    position: absolute;
+    top: 150px;
+    padding-top: 100px;
+    left: calc(20vw + 150px);
+    background-image: url("../assets/img/web.png");
+    background-repeat: no-repeat; }
+  #designer .apps {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    margin-top: -100px;
+    height: 350px; }
+    #designer .apps span {
+      width: 100%;
+      transition: transform 0.3s eas-in-out;
+      transform: scale(1); }
+      #designer .apps span:hover {
+        transform: scale(2); }
   #designer .title-1 {
     position: absolute;
     top: 10%;
     left: 10%;
-    font-size: 2rem; }
+    font-size: 2rem;
+    z-index: 5; }
     #designer .title-1 h3 {
       font-size: 1em; }
     #designer .title-1 h1 {
+      text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8), -1px -1px 0 rgba(255, 255, 255, 0.8);
       font-size: 4em;
       font-weight: 300;
       color: yellow;
@@ -493,6 +586,38 @@ section {
       font-size: 1em;
       text-align: right; }
 
+#producer .contain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex; }
+  #producer .contain div {
+    height: 100%;
+    width: 50%;
+    text-align: center; }
+    #producer .contain div h1 {
+      font-size: 3em;
+      font-weight: 300; }
+  #producer .contain .producer {
+    background-color: white; }
+    #producer .contain .producer .maschine {
+      width: 500px;
+      height: 500px;
+      position: relative;
+      background-color: black;
+      margin: auto auto;
+      padding: 20px; }
+      #producer .contain .producer .maschine .bar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: gray; }
+      #producer .contain .producer .maschine .screens span {
+        background-color: white; }
+  #producer .contain .composer {
+    background-color: blue; }
+
 #producer .title-1 {
   position: absolute;
   top: 50%;
@@ -501,9 +626,6 @@ section {
   transform: translateY(-50%); }
   #producer .title-1 h3 {
     font-size: 1em; }
-  #producer .title-1 h1 {
-    font-size: 3em;
-    font-weight: 300; }
   #producer .title-1 h5 {
     font-size: 1em;
     text-align: right; }
@@ -523,17 +645,205 @@ section {
     font-size: 1em;
     text-align: right; }
 
-#me .title-1 {
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  font-size: 2rem;
-  transform: translateY(-50%); }
-  #me .title-1 h3 {
-    font-size: 1em; }
-  #me .title-1 h1 {
-    font-size: 3em;
-    font-weight: 300; }
-  #me .title-1 h5 {
-    font-size: 1em;
-    text-align: right; }
+#me {
+  background-color: white; }
+  #me .title-1 {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    font-size: 2rem;
+    transform: translateY(-50%); }
+    #me .title-1 h3 {
+      font-size: 1em; }
+    #me .title-1 h1 {
+      font-size: 3em;
+      font-weight: 300; }
+    #me .title-1 h5 {
+      font-size: 1em;
+      text-align: right; }
+
+#education {
+  pointer-events: none;
+  background-color: white; }
+  #education .bg {
+    position: absolute;
+    top: 0;
+    height: 0%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 2s ease-in-out;
+    -webkit-filter: blur(100%) grayscale(100%);
+    filter: blur(100%) grayscale(100%);
+    opacity: 0.5; }
+  #education:hover {
+    color: white; }
+    #education:hover .bg {
+      background-image: url("../assets/img/immersive.jpg");
+      -webkit-filter: blur(40%) grayscale(0%);
+      filter: blur(40%) grayscale(0%);
+      opacity: 1;
+      height: 100%; }
+    #education:hover .vid {
+      opacity: 1; }
+  #education .vid {
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
+    width: 280px;
+    margin: 150px;
+    opacity: 0;
+    transition: all 2s ease-in-out;
+    pointer-events: auto; }
+    #education .vid iframe {
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); }
+    #education .vid h3 {
+      font-size: 2em;
+      margin: 0;
+      font-weight: 100; }
+    #education .vid h2 {
+      font-size: 3em;
+      margin: 5px;
+      font-weight: 300; }
+    #education .vid:hover {
+      transform: scale(1.3); }
+  #education .vidr {
+    right: 0; }
+    #education .vidr h2, #education .vidr h3 {
+      text-align: right; }
+  #education .vidl {
+    left: 0; }
+    #education .vidl h2, #education .vidl h3 {
+      text-align: left; }
+  #education .title {
+    position: relative;
+    z-index: 5;
+    margin-top: 20px; }
+  #education h1, #education h2 {
+    text-align: center;
+    font-size: 4em; }
+  #education .fsa {
+    z-index: 3;
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -300px;
+    margin-left: -300px;
+    transition: all 0.5s ease-in-out; }
+    #education .fsa img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      opacity: 0.5;
+      transition: all 0.5s ease-in-out; }
+  #education .contain {
+    pointer-events: auto;
+    z-index: 2;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -150px;
+    margin-left: -150px; }
+    #education .contain .logo {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      opacity: 0;
+      transition: all 1s ease-in-out; }
+      #education .contain .logo h2 {
+        font-size: 3em; }
+      #education .contain .logo h4 {
+        font-size: 2em; }
+    #education .contain:hover .fsa img {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
+      opacity: 0.8; }
+    #education .contain:hover .logo {
+      opacity: 1; }
+    #education .contain:hover .l {
+      transform: translateX(-25%); }
+    #education .contain:hover .r {
+      transform: translateX(25%); }
+
+footer {
+  width: 100%;
+  height: 50vh;
+  background: #D6FAFF;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+  footer h1 {
+    font-size: 9vw;
+    text-align: center;
+    margin: 10px 10px; }
+  footer .links {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10vw;
+    font-size: 8em; }
+    footer .links a {
+      text-decoration: none; }
+      footer .links a:hover {
+        text-decoration: none;
+        -webkit-animation: fun 0.5s ease-in-out infinite;
+        -moz-animation: fun 0.5s ease-in-out infinite;
+        animation: fun 0.5s ease-in-out infinite; }
+    footer .links #mail {
+      color: #E75A4D; }
+    footer .links #gh {
+      color: black; }
+    footer .links #li {
+      color: #0077B5; }
+    footer .links #tumblr {
+      color: #36465D; }
+
+@keyframes fun {
+  0% {
+    transform: scale(1.5) rotate(10deg); }
+  50% {
+    transform: scale(1.5) rotate(-10deg); }
+  100% {
+    transform: scale(1.5) rotate(10deg); } }
+
+.panda {
+  position: fixed;
+  z-index: 2;
+  transform: translate(-50%, 75%) rotate(-90deg);
+  bottom: 0;
+  left: 50%;
+  text-align: center;
+  transition: transform 0.4s ease-in-out; }
+  .panda:hover {
+    transform: translate(-50%, 20%) rotate(-90deg); }
+    .panda:hover img {
+      animation: none; }
+  .panda img {
+    height: auto;
+    width: 200px;
+    -webkit-animation: twitch 3s ease-in-out infinite;
+    -moz-animation: twitch 3s ease-in-out infinite;
+    animation: twitch 3s ease-in-out infinite; }
+
+@keyframes twitch {
+  0% {
+    transform: rotate(0deg); }
+  10% {
+    transform: rotate(10deg); }
+  15% {
+    transform: rotate(-10deg); }
+  20% {
+    transform: rotate(0deg); }
+  60% {
+    transform: translateX(0px); }
+  65% {
+    transform: translateX(10px); }
+  70% {
+    transform: translateX(0px); }
+  100% {
+    transform: rotate(0deg); } }
