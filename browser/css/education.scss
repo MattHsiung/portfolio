@@ -33,11 +33,10 @@
 	.vid{
 		position: absolute;
 		z-index: 4;
-		bottom: 0;
 		width:280px;
-		margin:150px;
+		margin:50px;
 		opacity: 0;
-		transition: all 2s ease-in-out;
+		transition: all 1s ease-in-out;
 		pointer-events:auto;
 		@extend .lato-lt;
 		@extend .sh-l;
@@ -62,6 +61,17 @@
 		}
 	}
 	.vidr{
+		bottom: 0;
+
+		h2, h3{
+		text-align: right;
+			
+		}
+		right:0;
+	}
+	.vidtr{
+		top: 0;
+
 		h2, h3{
 		text-align: right;
 			
@@ -69,6 +79,17 @@
 		right:0;
 	}
 	.vidl{
+		bottom: 0;
+
+		h2, h3{
+		text-align: left;
+			
+		}
+		left:0;
+	}
+
+	.vidtl{
+		top:0;
 		h2, h3{
 		text-align: left;
 			

@@ -689,11 +689,10 @@ section {
   #education .vid {
     position: absolute;
     z-index: 4;
-    bottom: 0;
     width: 280px;
-    margin: 150px;
+    margin: 50px;
     opacity: 0;
-    transition: all 2s ease-in-out;
+    transition: all 1s ease-in-out;
     pointer-events: auto; }
     #education .vid iframe {
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); }
@@ -708,12 +707,24 @@ section {
     #education .vid:hover {
       transform: scale(1.3); }
   #education .vidr {
+    bottom: 0;
     right: 0; }
     #education .vidr h2, #education .vidr h3 {
       text-align: right; }
+  #education .vidtr {
+    top: 0;
+    right: 0; }
+    #education .vidtr h2, #education .vidtr h3 {
+      text-align: right; }
   #education .vidl {
+    bottom: 0;
     left: 0; }
     #education .vidl h2, #education .vidl h3 {
+      text-align: left; }
+  #education .vidtl {
+    top: 0;
+    left: 0; }
+    #education .vidtl h2, #education .vidtl h3 {
       text-align: left; }
   #education .title {
     position: relative;
