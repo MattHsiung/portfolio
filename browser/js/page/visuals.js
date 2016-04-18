@@ -16,7 +16,7 @@ $( document ).ready(function() {
   $(window).scroll(function(){
 
     	var pos = $(this).scrollTop();
-    	console.log(pos)
+    	// console.log(pos)
   	$('.face').css({
   		'opacity': pos/800.00
   	});
@@ -74,7 +74,7 @@ $( document ).ready(function() {
 
       $('.apps span').each(function(i){
         setTimeout(function(){
-        	console.log('hide')
+        	// console.log('hide')
           $('.apps span').eq(i).removeClass('hidden');
         }, i*400);
 

@@ -1,8 +1,6 @@
 #bear{
-	background-color: blue;
-	overflow: hidden;
+	overflow: visible;
 	color:black;
-	@extend .anim-bg-2;
 	.bg-t{
 		background-image: url('../assets/img/taiwan-t.png');
 		position: absolute;
