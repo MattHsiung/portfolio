@@ -23,6 +23,7 @@ $gray:#333;
   }
 }
 
+
 .fade {
     position: absolute;
     top: 0;
@@ -96,6 +97,7 @@ section{
 
 .iam{
   position: absolute;
+  z-index: 6;
   margin:30px;
   h1{
     @extend .lato;
@@ -191,7 +193,7 @@ section{
 .hidden{
   visibility: hidden;
 }
-
+@import 'mobile';
 @import 'welcome';
 @import 'name';
 @import 'bear';
