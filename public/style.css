@@ -808,6 +808,8 @@ footer {
       color: #0077B5; }
     footer .links #tumblr {
       color: #36465D; }
+    footer .links #codepen {
+      color: #191919; }
 
 @keyframes fun {
   0% {
